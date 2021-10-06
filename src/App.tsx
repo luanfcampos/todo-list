@@ -16,19 +16,24 @@ const App = () => {
       id: list.length + 1,
       name: taskName,
       done: false
-    });
+    })
     setList(newList)
   }
 
-  // Função feita para tarefinha de casa.
   const handleTaskChange = (id: number, done: boolean) => {
-    let newList = [...list];
+    let newList = [...list]
     for(let i in newList) {
       if(newList[i].id === id) {
         newList[i].done = done
       }
     }
     setList(newList);
+  }
+  
+  const handleRemoveTask = (id: number) => {
+    let newList = [...list]
+    newList.splice(id, 1)
+    setList(newList)
   }
 
   return (
@@ -43,6 +48,7 @@ const App = () => {
               key={index}
               item={item}
               onChange={handleTaskChange}
+
             />
           ))}
 

@@ -20,6 +20,7 @@ export const ListItem = (({ item }: Props) => {
             onChange={e => setIsChecked(e.target.checked)}
             />
             <label>{item.name}</label>
+            <a href="#" className="Button">❌</a>
         </C.Container>
     )
 })
