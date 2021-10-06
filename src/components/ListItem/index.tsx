@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 type Props = {
     item: Item
-
+    onChange: (id: number, done: boolean) => void
 }
 
 export const ListItem = (({ item }: Props) => {
